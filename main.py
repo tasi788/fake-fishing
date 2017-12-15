@@ -10,13 +10,12 @@ lookup = 'http://ip-api.com/json/{ip}?fields=520191&lang=en'
 def hello_world():
     agent = request.headers.get('User-Agent')
     try:
-        #heroku os.environ.get('X-Forwarded-For')
+        #heroku request.headers['X-Forwarded-For']
         #origin request.remote_addr
         ip = request.headers['X-Forwarded-For']
-        print(ip)
         r = requests.get(lookup.format(ip=ip))
         get = json.loads(r.text)
-        country = get['country']+get['city']
+        country = get['country']+', '+get['city']
         return '你用的裝置是{agent}\n你的IP是{ip}\n來自於{country}'.format(agent=agent,ip=ip,country=country)
     except:
         return '你用的裝置是{agent}\n你的IP是{ip}'.format(agent=agent,ip=ip)
