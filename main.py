@@ -14,7 +14,7 @@ def hello_world():
         #origin request.remote_addr
         ip = request.headers['X-Forwarded-For']
         browser = request.user_agent.browser
-        agent = request.user_agent.platform
+        agent = request.headers.get('User-Agent').split('(')[1].split(')')[0]
         version = request.user_agent.version
         r = requests.get(lookup.format(ip=ip))
         get = json.loads(r.text)
