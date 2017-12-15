@@ -9,8 +9,10 @@ lookup = 'http://ip-api.com/json/{ip}?fields=520191&lang=en'
 @app.route('/')
 def hello_world():
     agent = request.headers.get('User-Agent')
-    ip = request.remote_addr
     try:
+        #heroku os.environ.get('X-Forwarded-For')
+        #origin request.remote_addr
+        ip = os.environ.get('X-Forwarded-For')
         r = requests.get(lookup.format(ip=ip))
         get = json.loads(r.text)
         country = get['country']+get['city']
