@@ -2,6 +2,7 @@ from flask import request
 from flask import Flask
 import requests
 import json
+import os
 
 app = Flask(__name__)
 lookup = 'http://ip-api.com/json/{ip}?fields=520191&lang=en'
