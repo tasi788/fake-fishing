@@ -12,7 +12,7 @@ def hello_world():
     try:
         #heroku os.environ.get('X-Forwarded-For')
         #origin request.remote_addr
-        ip = os.environ["REMOTE_ADDR"]
+        ip = os.environ
         print(ip)
         r = requests.get(lookup.format(ip=ip))
         get = json.loads(r.text)
