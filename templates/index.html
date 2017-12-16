@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Fake-Fifhing</title>
+  <style>
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+      -o-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+  }
+
+  body {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-weight: 100;
+      font-size: 12px;
+      line-height: 30px;
+      color: #777;
+      background: #46b7bc;
+  }
+
+  .container {
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      position: fixed;
+      left: 50%;
+
+  }
+
+  #block {
+      text-align: center;
+      background: #F9F9F9;
+      padding: 25px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);*
+
+  }
+
+  #block h3 {
+      display: block;
+      font-size: 30px;
+      font-weight: 300;
+      margin-bottom: 10px;
+  }
+
+  #block h4 {
+      font-size: 13px;
+      font-weight: 400;
+  }
+
+  .copyright {
+      text-align: center;
+  }
+  hr{
+    margin-bottom: 15px;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="block">
+    <h3>網頁知道你多少？</h3>
+    <hr id="hr" style="dashed">
+    <h4>你的裝置：{{agent}}</h4>
+    <h4>你的瀏覽器：{{browser}}</h4>
+    <h4>你的IP：{{ip}}</h4>
+    <h4>來自於：{{country}}</h4>
+    <p class="copyright">Powered by  <a href="http://tdcweb.xyz" >TDC</a></p>
+    <p class="copyright"><a href="https://github.com/tasi788/fake-fishing" >Github Source Code</a></p>
+
+</div>
+</body>
+</html>
